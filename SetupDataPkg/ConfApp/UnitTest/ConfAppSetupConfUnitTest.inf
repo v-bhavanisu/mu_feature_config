@@ -70,6 +70,7 @@
   gMuVarPolicyDxePhaseGuid
   gEfiEventReadyToBootGuid
   gZeroGuid
+  gConfAppResetGuid
 
 [BuildOptions]
   *_*_*_CC_FLAGS = -D UNIT_TEST_ENV
