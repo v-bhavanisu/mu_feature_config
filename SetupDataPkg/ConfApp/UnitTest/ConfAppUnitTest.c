@@ -387,9 +387,9 @@ ConfAppEntrySelect1 (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
@@ -446,9 +446,9 @@ ConfAppEntrySelect2 (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
@@ -505,9 +505,9 @@ ConfAppEntrySelect3 (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
@@ -562,9 +562,9 @@ ConfAppEntrySelect4 (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
@@ -682,9 +682,9 @@ ConfAppEntrySelectEsc (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
@@ -738,9 +738,9 @@ ConfAppEntrySelectOther (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
@@ -798,9 +798,9 @@ ConfAppEntryMfg (
   expect_value (MockEnableCursor, Visible, FALSE);
   will_return (MockEnableCursor, EFI_SUCCESS);
 
-  expect_any_count (MockSetCursorPosition, Column, 1);
-  expect_any_count (MockSetCursorPosition, Row, 1);
-  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 1);
+  expect_any_count (MockSetCursorPosition, Column, 2);
+  expect_any_count (MockSetCursorPosition, Row, 2);
+  will_return_count (MockSetCursorPosition, EFI_SUCCESS, 2);
 
   will_return_always (MockClearScreen, EFI_SUCCESS);
   will_return_always (MockSetAttribute, EFI_SUCCESS);
