@@ -419,6 +419,7 @@ ConfAppEntrySelect2 (
 {
   EFI_KEY_DATA  KeyData1;
   EFI_KEY_DATA  KeyData2;
+  EFI_STATUS    Status;
 
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
@@ -474,6 +475,7 @@ ConfAppEntrySelect3 (
 {
   EFI_KEY_DATA  KeyData1;
   EFI_KEY_DATA  KeyData2;
+  EFI_STATUS    Status;
 
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
