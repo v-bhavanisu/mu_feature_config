@@ -190,6 +190,23 @@ Print (
 }
 
 /**
+  Calling this function causes a system-wide reset. This sets
+  all circuitry within the system to its initial state. This type of reset
+  is asynchronous to system operation and operates without regard to
+  cycle boundaries.
+
+  System reset should not return, if it returns, it means the system does
+  not support cold reset.
+**/
+VOID
+EFIAPI
+ResetCold (
+  VOID
+  )
+{
+}
+
+/**
   Mocked version of MockWaitForEvent.
 
   @param[in]   NumberOfEvents   The number of events in the Event array.
