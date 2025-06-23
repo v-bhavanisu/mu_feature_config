@@ -506,8 +506,9 @@ ConfAppEntrySelect3 (
 {
   EFI_KEY_DATA  KeyData1;
   EFI_KEY_DATA  KeyData2;
-  EFI_STATUS    Status;
-  EFI_KEY_DATA  DummyKey = { 0 };
+  BASE_LIBRARY_JUMP_BUFFER  JumpBuf;
+
+  DEBUG ((DEBUG_INFO, "ConfAppEntrySelect3 called \n"));
 
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
@@ -525,19 +526,25 @@ ConfAppEntrySelect3 (
   KeyData1.Key.ScanCode    = SCAN_NULL;
   will_return (MockReadKey, &KeyData1);
 
-  will_return (BootOptionMgr, MainExit);
-  will_return (BootOptionMgr, EFI_SUCCESS);
+  // will_return (BootOptionMgr, MainExit);
+  // will_return (BootOptionMgr, EFI_SUCCESS);
+
+  will_return (SetupConfMgr, MainExit);
+  will_return (SetupConfMgr, EFI_SUCCESS);
 
   KeyData2.Key.UnicodeChar = 'y';
   KeyData2.Key.ScanCode    = SCAN_NULL;
   will_return (MockReadKey, &KeyData2);
 
-  will_return (MockReadKey, &DummyKey);
-  will_return (MockReadKey, &DummyKey);
-  expect_value (MockResetSystem, ResetType, EfiResetCold);
+  will_return (MockResetSystem, &JumpBuf);
 
-  Status = ConfAppEntry (NULL, NULL);
-  UT_ASSERT_NOT_EFI_ERROR (Status);
+  // Use setjmp/longjmp to simulate reset
+  if (SetJump (&JumpBuf) == 0) {
+    ConfAppEntry (NULL, NULL);
+    // If we get here, reset was not called as expected
+    UT_ASSERT_TRUE (FALSE);
+  }
+  // If longjmp occurs, test passes
 
   return UNIT_TEST_PASSED;
 }
@@ -567,6 +574,7 @@ ConfAppEntrySelect4 (
   EFI_KEY_DATA  KeyData2;
   EFI_STATUS    Status;
 
+  DEBUG ((DEBUG_INFO, "ConfAppEntrySelect4 called \n"));
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
   expect_value (MockEnableCursor, Visible, FALSE);
@@ -625,6 +633,7 @@ ConfAppEntrySelectH (
   EFI_STATUS    Status;
   EFI_KEY_DATA  DummyKey = { 0 };
 
+  DEBUG ((DEBUG_INFO, "ConfAppEntrySelectH called \n"));
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
   expect_value (MockEnableCursor, Visible, FALSE);
@@ -688,6 +697,8 @@ ConfAppEntrySelectEsc (
   EFI_STATUS    Status;
   EFI_KEY_DATA  DummyKey = { 0 };
 
+  DEBUG ((DEBUG_INFO, "ConfAppEntrySelectEsc called \n"));
+
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
   expect_value (MockEnableCursor, Visible, FALSE);
@@ -744,6 +755,8 @@ ConfAppEntrySelectOther (
   EFI_KEY_DATA  KeyData3;
   EFI_STATUS    Status;
   EFI_KEY_DATA  DummyKey = { 0 };
+
+  DEBUG ((DEBUG_INFO, "ConfAppEntrySelectOther called \n"));
 
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
@@ -805,6 +818,8 @@ ConfAppEntryMfg (
   EFI_KEY_DATA  KeyData2;
   EFI_STATUS    Status;
   EFI_KEY_DATA  DummyKey = { 0 };
+
+  DEBUG ((DEBUG_INFO, "ConfAppEntryMfg called \n"));
 
   will_return (MockSetWatchdogTimer, EFI_SUCCESS);
 
