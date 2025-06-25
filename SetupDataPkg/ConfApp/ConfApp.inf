@@ -42,7 +42,7 @@
   UefiRuntimeServicesTableLib
   MemoryAllocationLib
   UefiLib
-  ResetSystemLib
+  #ResetSystemLib
   UefiBootManagerLib
   MuSecureBootKeySelectorLib
   SecureBootKeyStoreLib
