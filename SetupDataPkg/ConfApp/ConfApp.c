@@ -20,6 +20,7 @@
 #include <Library/PerformanceLib.h>
 #include <Library/ConfigSystemModeLib.h>
 #include <Library/BaseMemoryLib.h>
+#include <Library/ResetUtilityLib.h>
 
 #include "ConfApp.h"
 

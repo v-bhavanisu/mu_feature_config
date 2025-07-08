@@ -41,7 +41,6 @@
   UefiRuntimeServicesTableLib
   MemoryAllocationLib
   UefiLib
-  #ResetSystemLib
   UefiBootManagerLib
   JsonLiteParserLib
   FileHandleLib
@@ -52,6 +51,7 @@
   ConfigSystemModeLib
   ConfigVariableListLib
   BaseMemoryLib
+  ResetUtilityLib
 
 [Guids]
   gMuVarPolicyDxePhaseGuid
