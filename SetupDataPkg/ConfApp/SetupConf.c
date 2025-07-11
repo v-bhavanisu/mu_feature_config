@@ -25,6 +25,7 @@
 #include <Library/PerformanceLib.h>
 #include <Library/ConfigVariableListLib.h>
 #include <Library/ConfigSystemModeLib.h>
+#include <Library/ResetUtilityLib.h>
 
 #include "ConfApp.h"
 #include "SvdUsb/SvdUsb.h"
@@ -458,6 +459,7 @@ EXIT:
     // Prepare ResetData GUID
     CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
     // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+    DEBUG ((DEBUG_INFO, "SetupConf Debug 1!!!\n"));
     ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
   }
 
@@ -532,6 +534,7 @@ ProcessSvdUsbInput (
     // Prepare ResetData GUID
     CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
     // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+    DEBUG ((DEBUG_INFO, "SetupConf Debug 2!!!\n"));
     ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
     // Should not be here
     CpuDeadLoop ();
@@ -611,6 +614,7 @@ ProcessSvdSerialInput (
     // Prepare ResetData GUID
     CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
     // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+    DEBUG ((DEBUG_INFO, "SetupConf Debug 3!!!\n"));
     ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
     // Should not be here
     CpuDeadLoop ();

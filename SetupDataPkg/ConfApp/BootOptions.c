@@ -17,6 +17,7 @@
 #include <Library/UefiBootManagerLib.h>
 #include <Library/UefiLib.h>
 // #include <Library/ResetSystemLib.h>
+#include <Library/ResetUtilityLib.h>
 
 #include "ConfApp.h"
 
@@ -180,6 +181,7 @@ BootOptionMgr (
       // Prepare ResetData GUID
       CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
       // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+      DEBUG ((DEBUG_INFO, "Boot to Option Debug 1!!!\n"));
       ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
       CpuDeadLoop ();
       break;
