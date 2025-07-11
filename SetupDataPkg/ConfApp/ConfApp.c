@@ -438,7 +438,8 @@ ConfAppEntry (
       ASSERT (FALSE);
       // Prepare ResetData GUID
       CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
-      gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+      // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+      ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
       CpuDeadLoop ();
     }
   }

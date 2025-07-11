@@ -179,7 +179,8 @@ BootOptionMgr (
       // If we ever come back, we should directly reboot since the state of system might have changed...
       // Prepare ResetData GUID
       CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
-      gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+      // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
+      ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
       CpuDeadLoop ();
       break;
     case BootOptExit:
