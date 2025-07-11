@@ -419,7 +419,8 @@ ConfAppEntry (
           // Prepare ResetData GUID
           CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
           // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
-          DEBUG ((DEBUG_INFO, "ConfApp main Debug 1!!!\n"));
+          // DEBUG ((DEBUG_INFO, "ConfApp main Debug 1!!!\n"));
+          Print (L"ConfApp main Debug 1!!!\n");
           ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
           Print (L"reset done...\n");
         } else {
@@ -440,7 +441,8 @@ ConfAppEntry (
       // Prepare ResetData GUID
       CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
       // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
-      DEBUG ((DEBUG_INFO, "ConfApp main Debug 2!!!\n"));
+      // DEBUG ((DEBUG_INFO, "ConfApp main Debug 2!!!\n"));
+      Print (L"ConfApp main Debug 2!!!\n");
       ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
       CpuDeadLoop ();
     }

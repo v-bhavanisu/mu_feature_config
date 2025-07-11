@@ -181,7 +181,8 @@ BootOptionMgr (
       // Prepare ResetData GUID
       CopyGuid (&ResetData.ResetGuid, &gConfAppResetGuid);
       // gRT->ResetSystem (EfiResetCold, EFI_SUCCESS, sizeof (ResetData), &ResetData);
-      DEBUG ((DEBUG_INFO, "Boot to Option Debug 1!!!\n"));
+      // DEBUG ((DEBUG_INFO, "Boot to Option Debug 1!!!\n"));
+      Print (L"Boot to Option Debug 1!!!\n");
       ResetSystemWithSubtype (EfiResetCold, &ResetData.ResetGuid);
       CpuDeadLoop ();
       break;
